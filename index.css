@@ -1,0 +1,721 @@
+.whatsapp-button {
+   position: fixed;
+   bottom: 50px;
+   right: 50px;
+   background-color: #ffffffa8;
+   color: white;
+   font-size: 16px;
+   font-weight: bold;
+   padding: 12px 20px;
+   border-radius: 50px;
+   display: flex;
+   align-items: center;
+   gap: 8px;
+   text-decoration: none;
+   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+   transition: background-color 0.3s ease, transform 0.2s ease;
+   z-index: 1000;
+}
+
+.whatsapp-button i {
+   font-size: 24px;
+}
+
+.whatsapp-button:hover {
+   background-color: #ff660000;
+   transform: scale(1.05);
+}
+.about {
+   padding: 0 20px;
+}
+
+.about .wrapper {
+   width: 100%;
+   max-width: 1366px;
+   margin: 50px auto;
+   padding: 10px;
+   border: 1px solid rgba(0, 0, 0, 0.2);
+   border-radius: 10px;
+   display: flex;
+   flex-direction: row; /* Varsayılan olarak row */
+   opacity: 0;
+   transition: opacity 0.5s ease-in-out;
+}
+
+.about .wrapper:nth-child(2n) {
+   flex-direction: row-reverse;
+}
+
+.about .wrapper.active {
+   opacity: 1;
+}
+
+.about .wrapper .text {
+   flex: 2;
+   padding: 5px;
+   font-family: 'Josefin Sans', sans-serif;
+   transition: transform 0.5s ease-in-out;
+   transform: translateX(-20px); /* Sol taraftan kaydırma */
+}
+
+.about .wrapper:nth-child(2n) .text {
+   transform: translateX(20px); /* Sağdan kaydırma */
+}
+
+.about .wrapper.active .text {
+   transform: translateX(0); /* Orijinal konum */
+}
+
+.about .wrapper .text h1 {
+   font-family: 'Dancing Script', cursive;
+}
+
+.about .wrapper .text p {
+   padding: 10px;
+   font-size: 1.2rem;
+   line-height: 25px;
+}
+
+.about .wrapper .text p::first-letter {
+   margin-left: 20px;
+}
+
+.about .wrapper .photo {
+   flex: 2;
+   overflow: hidden;
+   border-radius: 10px;
+   transition: transform 0.5s ease-in-out;
+   transform: translateX(20px); /* Sağdan kaydırma */
+}
+
+.about .wrapper:nth-child(2n) .photo {
+   transform: translateX(-20px); /* Soldan kaydırma */
+}
+
+.about .wrapper.active .photo {
+   transform: translateX(0); /* Orijinal konum */
+}
+
+.about .wrapper .photo img {
+   width: 100%;
+   height: auto;
+   border-radius: 10px;
+   cursor: pointer;
+   transition: transform 0.5s ease-in-out;
+}
+
+.about .wrapper .photo img:hover {
+   transform: scale(1.2);
+}
+.add {
+   width: 100%;
+   height: calc(100vh - 50px);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.add form {
+   background-color: rgba(0, 0, 0, 0.1);
+   display: flex;
+   height: 450px;
+   width: 100%;
+   max-width: 1000px;
+   padding: 20px;
+   border-radius: 10px;
+   border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.add form .text {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+   width: 100%;
+}
+
+.add form .text input,
+.add form .text textarea {
+   width: 100%;
+   outline: none;
+   border: 1px solid rgba(0, 0, 0, 0.2);
+   border-radius: 10px;
+   padding: 10px;
+}
+
+.add form .text input {
+   height: 40px;
+   font-size: 1.1rem;
+}
+
+.add form .text input:first-child {
+   font-family: 'Pacifico', cursive;
+}
+
+.add form .text input:last-child {
+   font-family: 'Dancing Script', cursive;
+   font-weight: 700;
+}
+
+.add form .text textarea {
+   height: 180px;
+   font-family: 'Arvo', serif;
+   font-size: 1rem;
+}
+
+.add form .button {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
+   align-items: center;
+   width: 15%; /* Artırıldı */
+}
+
+.add form .button button,
+.add form .button label {
+   width: 50px; /* Boyut artırıldı */
+   height: 50px; /* Boyut artırıldı */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: rgba(255, 255, 255, 0.598);
+   border: none;
+   outline: none;
+   border-radius: 50%;
+   font-size: 1.2rem;
+   cursor: pointer;
+   transition: background-color 0.3s ease; /* Hover efekti eklendi */
+}
+
+.add form .button button:hover,
+.add form .button label:hover {
+   background-color: rgba(255, 255, 255, 0.8);
+}
+:root{
+   font-size: 16px;
+}
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+html::-webkit-scrollbar{
+   width: 0px;
+}
+html{
+   scroll-behavior: smooth;
+}
+body{
+   width: 100;
+   height: auto;
+   min-height: 100vh;
+   background-color: #efefef;
+}
+img, video{
+   width: 100%;
+}
+a, a:active, a:link, a::before, a::after{
+   color: black;
+   text-decoration: none;
+}
+ul{
+   list-style: none;
+}
+.error {
+   width: 100%;
+   height: calc(100vh - 50px);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: relative;
+}
+
+.error i {
+   position: absolute;
+   font-size: 20rem;
+   z-index: 5;
+   color: rgb(255, 87, 87, 0.3);
+}
+
+.error span {
+   font-size: 5rem;
+   z-index: 10;
+   font-family: 'Josefin Sans', sans-serif;
+   font-weight: 700;
+}
+ /* Google fonts including area */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&display=swap');
+
+/* 
+ ? Google fonts usage area
+
+
+
+* Regular type: 
+font-family: 'Josefin Sans', sans-serif;
+font-family: 'Arvo', serif;
+
+* Italic type: 
+font-family: 'Pacifico', cursive;
+font-family: 'Satisfy', cursive;
+font-family: 'Dancing Script', cursive;
+
+* Monospace type: 
+font-family: 'Ubuntu Mono', monospace;
+
+*/
+.header {
+   margin-top: 70px;
+   width: 100%;
+   position: relative;
+   display: flex;
+   justify-content: center;
+}
+
+.header img {
+   width: 100%;
+   height: 450px;
+   object-fit: cover;
+}
+
+.header h1,
+.header h3 {
+   position: absolute;
+}
+
+.header h1 {
+   top: -50px;
+   font-family: 'Pacifico', cursive;
+   font-size: 4rem;
+   color: white;
+   text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5), 0px 0px 5px rgba(0, 0, 0, 0.4), 0px 0px 10px rgba(0, 0, 0, 0.6);
+}
+.header h3 {
+   top: 80px;
+   font-family: 'Satisfy', cursive;
+   font-size: 2.6rem;
+   text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4), 0px 0px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Scroll animation */
+
+.header {
+   transform: translateX(-30px);
+   transition: all 0.5s;
+   opacity: 0;
+}
+.header.active {
+   transform: translateX(0px);
+   opacity: 1;
+}
+
+.header h1,
+.header h3 {
+   position: absolute;
+   transform: translateY(-20px);
+   transition: all 0.8s;
+   opacity: 0;
+}
+.header.active h1,
+.header.active h3 {
+   position: absolute;
+   transform: translateY(0px);
+   opacity: 1;
+}
+
+.header.active h3 {
+   transition-delay: 0.3s;
+   position: absolute;
+   transform: translateY(0px);
+
+}
+.header h3 {
+   color: white;
+}
+.home{
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   margin-top: 50px;
+   padding: 0px 10px;
+}
+.home .wrapper{
+   width: 100%;
+   max-width: 1366px;
+   display: flex;
+   padding: 0 10px;
+}
+.logReg {
+   position: relative;
+}
+
+.logReg img {
+   width: 100%;
+   height: calc(100vh - 50px);
+   object-fit: cover;
+}
+
+.logReg form {
+   position: absolute;
+   width: 350px;
+   left: calc((100% - 350px) / 2);
+   top: 50px;
+   background-color: rgba(0, 0, 0, 0.7);
+   padding: 20px;
+   border-radius: 10px;
+   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5), 0px 0px 10px rgba(0, 0, 0, 0.5), 0px 0px 15px rgba(0, 0, 0, 0.5);
+}
+
+.logReg form .formGroup {
+   margin-bottom: 30px;
+   position: relative;
+}
+
+.logReg form .formGroup input {
+   width: 100%;
+   height: 40px;
+   background: rgba(0, 0, 0, 0.3);
+   border: none;
+   outline: none;
+   border-radius: 10px;
+   color: white;
+   padding: 0px 0px 0px 10px;
+}
+
+.logReg form .formGroup span {
+   position: absolute;
+   left: 10px;
+   top: 10px;
+   color: white;
+   font-family: 'Josefin Sans', sans-serif;
+   padding: 4px 7px;
+   transition: all 0.3s;
+   border-radius: 3px;
+}
+
+.logReg form .formGroup input:focus~span,
+.logReg form .formGroup input:valid~span {
+   top: -10px;
+   left: 20px;
+   font-size: 0.8rem;
+   background-color: rgba(0, 0, 0, 0.5);
+}
+
+.logReg form .btnGroup {
+   width: 100%;
+   height: auto;
+   display: flex;
+   justify-content: space-between;
+}
+
+.logReg form .btnGroup a {
+   color: white;
+   font-family: 'Josefin Sans', sans-serif;
+   transition: all 0.3s;
+   border-bottom: 1px solid transparent;
+   align-self: flex-end;
+   padding-bottom: 3px;
+}
+.logReg form .btnGroup a:hover{
+   border-color: white;
+}
+.logReg form .btnGroup button{
+   font-size: 1rem;
+   color: white;
+   outline: none;
+   cursor: pointer;
+   padding: 5px 10px;
+   background-color: rgba(113, 113, 113, 0.6);
+   border-radius: 5px;
+   border: none;
+}
+.posts {
+   flex: 9;
+   margin-bottom: 30px;
+   display: flex;
+   flex-wrap: wrap;
+   gap: 20px;
+}
+
+.posts .post {
+   width: calc(50% - 20px);
+   border: 1px solid rgba(0, 0, 0, 0.3);
+   border-radius: 10px;
+   padding: 15px;
+   margin-bottom: 30px;
+}
+
+.posts h1 {
+   font-family: 'Pacifico', cursive;
+}
+
+.posts img {
+   border-radius: 10px;
+   margin-bottom: 5px;
+   height: 300px;
+   object-fit: cover;
+}
+
+.posts p {
+   padding: 5px;
+   font-family: 'Arvo', serif;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-line-clamp: 4;
+   -webkit-box-orient: vertical;
+   line-height: 23px;
+}
+
+.posts .authorAndDate {
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   padding: 0px 10px;
+}
+
+.posts .authorAndDate span:nth-child(1) {
+   font-family: 'Dancing Script', cursive;
+   font-weight: 700;
+}
+.posts .authorAndDate span:nth-child(2) {
+   font-family: 'Ubuntu Mono', monospace;
+   font-weight: 700;
+}
+
+/* Scroll animation */
+
+.posts .post {
+   transform: translateX(-20px);
+   opacity: 0;
+   transition: all 0.5s;
+}
+.posts .post:nth-child(2n) {
+   transition: all 0.8s;
+}
+.posts .post.active {
+   transform: translateX(0px);
+   opacity: 1;
+}
+
+
+/* Responsive area */
+@media(max-width:1100px){
+   .posts .post {
+      width: 100%;
+   }
+   .posts .post:nth-child(2n) {
+      transition: all 0.5s;
+   }
+}
+.sidebar {
+   flex: 3;
+   padding: 0 20px;
+}
+
+.sidebar .area {
+   width: 200px; /* Genişliği küçült */
+   padding: 10px; /* İç boşluğu küçült */
+   font-size: 14px; /* Yazı boyutunu küçült */
+}
+
+.sidebar .area img {
+   width: 80px; /* Profil resmini küçült */
+   height: 80px;
+   border-radius: 50%;
+}
+
+.sidebar .categories span {
+   font-size: 12px; /* Etiketlerin yazı boyutunu küçült */
+   padding: 4px 8px; /* Etiketlerin iç boşluğunu küçült */
+}
+
+
+.sidebar h3 {
+   width: 100%;
+   margin-bottom: 10px;
+   font-family: 'Pacifico', cursive;
+   display: flex;
+   justify-content: center;
+   position: relative;
+}
+
+.sidebar h3::after {
+   content: '';
+   width: 50%;
+   height: 2px;
+   background-color: black;
+   position: absolute;
+   bottom: 0;
+}
+
+.sidebar img {
+   padding: 5px;
+   border-radius: 15px;
+}
+
+.sidebar .categories {
+   width: 100%;
+   display: flex;
+   flex-wrap: wrap;
+   gap: 10px;
+}
+
+.sidebar .categories span {
+   display: block;
+   width: calc(50% - 10px);
+   font-family: 'Arvo', serif;
+   background-color: rgba(0, 0, 0, 0.03);
+   padding: 2px;
+   border-radius: 3px;
+   cursor: pointer;
+}
+
+.sidebar a {
+   font-family: 'Josefin Sans', sans-serif;
+   display: block;
+   padding: 3px;
+   margin-bottom: 5px;
+   background-color: rgba(0, 0, 0, 0.03);
+}
+.sidebar a:nth-child(2n + 1) {
+   background-color: rgba(0, 0, 0, 0.08);
+}
+
+
+/* Scroll animation */
+
+.sidebar .area {
+   opacity: 0;
+   transition: all 0.5s;
+}
+.sidebar .area.active {
+   opacity: 1;
+}
+.topbar {
+   width: 100%;
+   height: 50px;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   font-family: 'Josefin Sans', sans-serif;
+   background-color: #fff;
+}
+.topbar .wrapper{
+   width: 100%;
+   max-width: 1366px;
+   display: flex;
+}
+.topbar .left,
+.topbar .right {
+   flex: 3;
+   height: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: space-evenly;
+}
+.topbar .left i{
+   font-size: 1.3rem;
+}
+
+.topbar .center {
+   flex: 6;
+   height: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: space-evenly;
+}
+
+.topbar .right span img {
+   width: 40px;
+   height: 40px;
+   border-radius: 50%;
+}
+.topbar .right .searchEngine{
+   width: 70%;
+   height: 100%;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   position: relative;
+}
+.topbar .right .searchEngine i{
+   position: absolute;
+   right: 0px;
+   background-color: rgb(255, 255, 255);
+   width: 30px;
+   height: 30px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-radius: 50%;
+   cursor: pointer;
+}
+.topbar .right .searchEngine input{
+   width: 100%;
+   margin-right: 20px;
+   height: 25px;
+   border-radius: 3px;
+   padding: 0px 0px 0px 10px;
+   opacity: 0;
+   transition: all 0.5s;
+}
+
+.topbar .right .searchEngine{
+   width: 0px;
+   transition: all 0.5s;
+}
+.topbar .right .searchEngine.active{
+   width: 70%;
+}
+.topbar .right .searchEngine.active input{
+   opacity: 1;
+}
+
+
+/* Scroll animation */
+.topbar .wrapper{
+   opacity: 0;
+   transition: all 0.5s;
+   transform: translateY(-10px);
+}
+.topbar .wrapper.active{
+   opacity: 1;
+   transform: translateY(0px);
+}
+.topbar .left i{
+   transition: all 0.3s;
+   transform: translateX(-20px);
+   opacity: 0;
+}
+.topbar .wrapper.active .left i{
+   transition: all 0.3s;
+   transform: translateX(0px);
+   opacity: 1;
+}
+.topbar .wrapper.active .left i:nth-child(2){
+   transition-duration: 0.5s;
+}
+.topbar .wrapper.active .left i:nth-child(3){
+   transition-duration: 0.8s;
+}
+.topbar .wrapper.active .left i:nth-child(4){
+   transition-duration: 1.2s;
+}
+
+.topbar .center, .topbar .right{
+   transform: translateX(-10px) translateY(-10px);
+   transition: all 0.5s;
+   opacity: 0;
+}
+.topbar .wrapper.active .center, .topbar .wrapper.active .right{
+   transform: translateX(0px) translateY(0px);
+   opacity: 1;
+}
+
+
